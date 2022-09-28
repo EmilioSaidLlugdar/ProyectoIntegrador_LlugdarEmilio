@@ -5,6 +5,7 @@ import com.portfolio.llugdaremiliosaid.Entity.Persona;
 import com.portfolio.llugdaremiliosaid.Interface.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ public class PersonaController {
         return ipersonaService.getPersona();
     }
     //creamos una persona, enviamos una persona del front al back
+    @PreAuthorize("hasRole('ADMIN')")// SE NECESITA SER ADMIN PARA REALIZAR ESTA ACCION
     @PostMapping("/personas/crear")
     public String createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
@@ -35,13 +37,16 @@ public class PersonaController {
     }
     
     //borrar una persona
+    @PreAuthorize("hasRole('ADMIN')")// SE NECESITA SER ADMIN PARA REALIZAR ESTA ACCION
     @DeleteMapping("/personas/borrar/{id}")
     public String deletePersona(@PathVariable Long id){
         ipersonaService.deletePersona(id);
         return "La persona fué Eliminada correctamente";
     }
     
+    
     //URL:PUERTO/personas/editar/4/nombre & apellido & img---- maso asi quedará la url
+    @PreAuthorize("hasRole('ADMIN')")// SE NECESITA SER ADMIN PARA REALIZAR ESTA ACCION
     @PutMapping ("/personas/editar/{id}")
     public Persona editPersona(@PathVariable Long id,
                                @RequestParam ("nombre") String nuevoNombre,
