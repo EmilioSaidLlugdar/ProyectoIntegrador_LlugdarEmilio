@@ -21,12 +21,12 @@ export class TokenService {
     return sessionStorage.getItem(TOKEN_KEY)!;
   }
 
-  public setUsername(username: string): void{
+  public setUserName(userName: string): void{
     window.sessionStorage.removeItem(USERNAME_KEY); //elimina por las dudas este guardado un token
-    window.sessionStorage.setItem (USERNAME_KEY, username);//copia el nuevo token
+    window.sessionStorage.setItem (USERNAME_KEY, userName);//copia el nuevo token
   }
 
-  public getUsername():string{
+  public getUserName():string{
     return sessionStorage.getItem(USERNAME_KEY)!;
   }
 

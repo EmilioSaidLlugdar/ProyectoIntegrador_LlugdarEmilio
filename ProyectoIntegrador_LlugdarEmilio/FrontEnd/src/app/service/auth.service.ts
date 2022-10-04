@@ -11,13 +11,13 @@ import { JwtDto } from '../model/jwt-dto';
 export class AuthService {
   authURL= 'http://localhost:8080/auth/';//le pasamos la ruta
 
-  constructor(private HttpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>{
-    return this.HttpClient.post<any>(this.authURL + 'nuevo', nuevoUsuario);
+    return this.httpClient.post<any>(this.authURL + 'nuevo', nuevoUsuario);
   }
 
   public login (loginUsuario: LoginUsuario): Observable<JwtDto>{
-    return this.HttpClient.post<JwtDto>(this.authURL + 'login', loginUsuario);
+    return this.httpClient.post<JwtDto>(this.authURL + 'login', loginUsuario);
   }
 }
