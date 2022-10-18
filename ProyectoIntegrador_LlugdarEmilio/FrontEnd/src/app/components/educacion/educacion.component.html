@@ -1,22 +1,37 @@
 <div class="row">
     <h1>Educación</h1>
-    <div class="col-lg-1"></div>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
+            Agregar Educacion
+        </button>
+    </div>
+    <div class="col lg 1"></div>
     <div class="col-lg-11">
-        <!-- ul- lista no ordenada -->
-        <ul>
-            <li> <h1>Edtudio 1</h1> - <h3> (año )</h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, officiis id? Sequi, nostrum temporibus impedit sapiente et corporis labore iusto earum nihil totam libero expedita dignissimos facilis omnis, repudiandae ut.</p>
-        </ul>
-        <!--  -->
-        <ul>
-            <li> <h1>Estudio 2</h1> - <h3> (año )</h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, officiis id? Sequi, nostrum temporibus impedit sapiente et corporis labore iusto earum nihil totam libero expedita dignissimos facilis omnis, repudiandae ut.</p>
-        </ul>
-        <!-- -->
-        <ul>
-            <li> <h1>Estudio 3</h1> - <h3> (año )</h3> </li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, officiis id? Sequi, nostrum temporibus impedit sapiente et corporis labore iusto earum nihil totam libero expedita dignissimos facilis omnis, repudiandae ut.</p>
-        </ul>
+        <!-- //creamos una tabla -->
+        <table class="table">
+            <tbody>
+                <!--filas-->
+                <tr *ngFor="let Educacion of educacion">
+                    <!--columnas-->
+                    <td>
+                        <h2>{{Educacion.nombreE}}</h2>
+                    </td>
+                    <td>{{Educacion.descripcionE}}</td>
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-light" routerLink="/editexp/{{Educacion.id}}">
+                            <i class="bi bi-pencil-fill"></i>EDITAR</button>
+                        <!--al hacer clic me re-->
+                    </td>
+
+                    <td *ngIf="isLogged">
+                        <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                            <i class="bi bi-trash-fill"></i> BORRAR</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
     </div>
 
 

@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
+import { NeweducacionComponent } from './components/educacion/neweducacion.component';
+import { EditeducacionComponent } from './components/educacion/editeducacion.component';
 
 const routes: Routes = [
   /*cunando sea localhost:4200 me dirige al http component (HomeComponent)
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path:'login',component: LoginComponent},
   { path:'nuevaexp', component: NewExperienciaComponent},
   {path: 'editexp/:id', component: EditExperienciaComponent},
+  {path: 'nuevaedu', component: NeweducacionComponent},
+  {path: 'editedu/:id', component: EditeducacionComponent}
 ];
 
 @NgModule({
