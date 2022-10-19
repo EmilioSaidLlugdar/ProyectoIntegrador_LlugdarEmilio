@@ -21,12 +21,12 @@ export class EditeducacionComponent implements OnInit {
 
   ngOnInit(): void {
     const id=this.activatedRouter.snapshot.params ['id'];
-    this.educacionS.details(id).subscribe(
+    this.educacionS.detail(id).subscribe(
       data=> {
         this.educacion= data;
 
       }, err=>{
-        alert("ERROR al Modificar");
+        alert("ERROR al Modificar-------");
         this.router.navigate(['']);
       }
     )
