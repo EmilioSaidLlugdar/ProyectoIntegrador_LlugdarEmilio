@@ -11,14 +11,14 @@ export class AcercaDeComponent implements OnInit {
 
   persona: persona = new persona("","","");
  
-  constructor(public PersonaService: PersonaService) { }
+  constructor(public personaService: PersonaService) { }
 
 
   /*El suscribe vincula al Observable con algunos eventos observables
   es un metodo que escucha siempre que observable realiza un cambio, ejecuta el codigo
   y da una respuesta */
   ngOnInit(): void {
-  this.PersonaService.getPersona().subscribe(data => {this.persona=data})
+  this.personaService.getPersona().subscribe(data => {this.persona=data})
   }
 
 }

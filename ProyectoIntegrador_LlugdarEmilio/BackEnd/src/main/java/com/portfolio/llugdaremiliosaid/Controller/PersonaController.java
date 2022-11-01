@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+/* cuandop trabaje con heroku debo descomentar esta linea
+@CrossOrigin(origins = "http://localhost:4200, http:// heroku.........")
+*/
 @CrossOrigin(origins="http://localhost:4200")
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;

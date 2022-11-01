@@ -25,7 +25,11 @@ export class ExperienciaComponent implements OnInit {
 
   //metodo
   cargarExperiencia(): void {
-    this.sExperiencia.lista().subscribe(data => { this.expe = data; })
+    this.sExperiencia.lista().subscribe(
+      data => {
+        this.expe = data;
+      }
+    )
 
   }
 

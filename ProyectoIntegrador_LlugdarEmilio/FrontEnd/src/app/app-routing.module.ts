@@ -6,6 +6,8 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
+import { NewSkillComponent } from './components/hys/new-skill.component';
+import { EditSkillComponent } from './components/hys/edit-skill.component';
 
 const routes: Routes = [
   /*cunando sea localhost:4200 me dirige al http component (HomeComponent)
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path:'nuevaexp', component: NewExperienciaComponent},
   {path: 'editexp/:id', component: EditExperienciaComponent},
   {path: 'nuevaedu', component: NeweducacionComponent},
-  {path: 'editedu/:id', component: EditeducacionComponent}
+  {path: 'editedu/:id', component: EditeducacionComponent},
+  {path:'newSkill', component: NewSkillComponent},
+  {path: 'editskill/:id', component:EditSkillComponent}
 ];
 
 @NgModule({

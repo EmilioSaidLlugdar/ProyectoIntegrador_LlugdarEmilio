@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   
-  URL: 'http://localhost:8080',
+  URL: 'http://localhost:8080/',
   // URL: 'http://heroku-backend' debo terminar de completar con el video deploy
 };
 
