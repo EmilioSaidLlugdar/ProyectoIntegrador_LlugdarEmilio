@@ -38,7 +38,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/auth")
-//@CrossOrigin (origins= {"http://localhost:4200"})
+@CrossOrigin (origins= {"http://localhost:4200"})
+/* cuandop trabaje con heroku debo descomentar esta linea
+@CrossOrigin(origins = "http://localhost:4200, http:// heroku.........")
+*/
 public class AuthController {
 
     /*realizamos 5 inyecciones de dependencias 

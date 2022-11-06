@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("explab")
+@RequestMapping("/explab")
 /* cuandop trabaje con heroku debo descomentar esta linea
 @CrossOrigin(origins = "http://localhost:4200, http:// heroku.........")
 */

@@ -14,15 +14,31 @@ export class PersonaService {
   
   URL = environment.URL + 'personas/';
   
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   /* angular usa observalble  para hacer todas las peticiones asincronas
   como definir determinador  eventos que envian informacion a algun componente HIJO
   y este a su vez le pasa la info a l PADRE 
   en el front creamos componentes hijos y lo anexamos al componente padre  */
-  public getPersona(): Observable<persona>{
-    return this.http.get<persona>(this.URL+'traer/perfil');
-    
-
+ 
+   //nos trae una lista de toda la educacion que tengamos
+   public lista (): Observable<persona[]>{
+    return this.httpClient.get<persona[]>(this.URL + 'lista'); 
   }
+
+  public detail(id:number): Observable<persona>{
+  return this.httpClient.get<persona>(this.URL + `detail/${id}`);
+  }
+
+  /*public save(educacion: Educacion): Observable<any>{
+    return this.httpClient.post<any>(this.URL + 'create', educacion);
+  }*/
+
+  public  update(id:number, Persona: persona): Observable<any>{
+    return this.httpClient.put<any>(this.URL + `update/${id}`, Persona);
+  }
+
+  /*public delete (id: Number): Observable<any>{
+    return this.httpClient.delete<any>(this.URL + `delete/${id}`);
+  }*/ 
 }

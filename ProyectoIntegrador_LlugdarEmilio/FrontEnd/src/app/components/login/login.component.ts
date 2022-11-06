@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){ //pregunta si esta logueado ?
-      this.isLogged=true; //me dice que sim esta logueado
+      this.isLogged=true; //me dice que si esta logueado
       this.isLogginFail= false; // no falla aunque sea redundante hacemos esto
       this.roles= this.tokenService.getAuthorities(); //guardamos en roles lo que traigas de token services
     }
